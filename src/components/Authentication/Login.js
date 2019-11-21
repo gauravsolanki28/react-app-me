@@ -23,7 +23,7 @@ class Login extends React.Component {
 		e.preventDefault();
 		this.props.LoadingInAction(this.props.isLoading)
 		const token = "token"
-		const API_KEY = "https://react-app-me.herokuapp.com/users"
+		const API_KEY = "http://localhost:3001/users"
 		const { email, password } = this.state;
 		axios.get(API_KEY, {
 			withCredentials: true,

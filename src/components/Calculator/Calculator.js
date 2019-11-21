@@ -28,7 +28,7 @@ class Calculator extends React.Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="calculator-container">
                 <div className="calc-body">
                     <div className="calc-screen">
                         <div className="calc-operation">{this.state.result}</div>

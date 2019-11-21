@@ -30,12 +30,14 @@ import Loader from "./components/Loader";
         <div className="App" >
               <Router>
                 {header}
-                <Route  path="/" render={()=>(
-                  !this.props.isAuthed ? (<Redirect to="/user/login"/>):(<Redirect to={lastLocation}/>))}/>
-                <Route  exact path ="/user/login" component={() => <Login />}/>
-                <Route  exact path ="/user/signup" component={SignUp} />  
-                <Route  exact path ="/" component={Homepage} />  
-                <Route  exact path ="/calculator" component={Calculator} />  
+                <main>
+                  <Route  path="/" render={()=>(
+                    !this.props.isAuthed ? (<Redirect to="/user/login"/>):(<Redirect to={lastLocation}/>))}/>
+                  <Route  exact path ="/user/login" component={() => <Login />}/>
+                  <Route  exact path ="/user/signup" component={SignUp} />  
+                  <Route  exact path ="/" component={Homepage} />  
+                  <Route  exact path ="/calculator" component={Calculator} />  
+                </main>
             </Router>
         </div>
         {loader}

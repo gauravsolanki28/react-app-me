@@ -12,3 +12,8 @@
     color: #fff;
     font-size: 20px;
 }
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+}

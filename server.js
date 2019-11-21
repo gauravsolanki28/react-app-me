@@ -6,7 +6,7 @@ const API_PORT = process.env.PORT || 3001;
 const app = express();
 app.use(cors({
   credentials: true,
-  origin:"*"
+  origin:"http://localhost:3000"
 }));
 const userRoute = require('./api/routes/users');
 

@@ -10,4 +10,9 @@ header > nav > ul {
 header > nav > ul > li > a {
     padding: 10px 0;
     display: inline-block;
+    color: #fff;
+}
+a:hover{
+    text-decoration: none;
+    color: #fff;
 }
