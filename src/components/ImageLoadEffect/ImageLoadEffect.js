@@ -45,7 +45,7 @@ class ImageLoadEffect extends React.Component {
     return (
       <React.Fragment>
         {/* {ResponsiveImage()} */}
-        <div className="container homepage">
+        <div className="container imageLoadEffect">
           {
             this.state.Images.map((image,i)=>{
               return (<LoadableImage key={i}

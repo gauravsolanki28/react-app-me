@@ -1,4 +1,8 @@
 .container{
     display: flex;
+    display: -webkit-flex;
     flex-wrap: wrap;
+}
+.imageLoadEffect{
+    margin-top: 25px;
 }
