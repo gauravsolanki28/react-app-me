@@ -6,41 +6,42 @@ import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import Login from './components/Authentication/Login';
 import SignUp from './components/Authentication/SignUp';
 import Calculator from './components/Calculator/Calculator';
+import ImageLoadEffect from './components/ImageLoadEffect/ImageLoadEffect'
+import ModalWindow from './components/ModalWindow/ModalWindow'
 import { connect } from 'react-redux';
-import Loader from "./components/Loader";
 
 
  class App extends React.Component {
-  componentDidMount(){
-  }
+
   render(){
-    let header, lastLocation, loader
-    if(this.props.isAuthed ){
-      header = <Header />
-    }
-    if(this.props.isLoading){
-      loader = <Loader/>
-    }
-    lastLocation = window.location.pathname;
-    if(lastLocation === "/user/login"){
-      lastLocation ="/"; 
+    console.log(this.props)
+    let modalWindow;
+
+    // let  lastLocation
+    // lastLocation = window.location.pathname;
+    // if(lastLocation === "/user/login"){
+    //   lastLocation ="/"; 
+    // }
+    if(this.props.isModalWindow){
+      modalWindow = <ModalWindow />
     }
     return (
       <React.Fragment>
         <div className="App" >
               <Router>
-                {header}
+                <Header />
                 <main>
-                  <Route  path="/" render={()=>(
+                  <Route path ="/" component={Homepage} />
+                  {/* <Route  path="/" render={()=>(
                     !this.props.isAuthed ? (<Redirect to="/user/login"/>):(<Redirect to={lastLocation}/>))}/>
-                  <Route  exact path ="/user/login" component={() => <Login />}/>
+                  <Route  exact path ="/user/login" component={() => <Login />}/> */}
                   <Route  exact path ="/user/signup" component={SignUp} />  
-                  <Route  exact path ="/" component={Homepage} />  
-                  <Route  exact path ="/calculator" component={Calculator} />  
+                  <Route  exact path ="/calculator" component={Calculator} /> 
+                  <Route  exact path ="/imageloadeffect" component={ImageLoadEffect} /> 
                 </main>
             </Router>
+            {modalWindow}
         </div>
-        {loader}
       </React.Fragment>
     );
   }
@@ -48,7 +49,7 @@ import Loader from "./components/Loader";
 const mapStateToProps = (state) => {
 	return {
     isAuthed: state.AuthReducer.isAuthed,
-    isLoading: state.LoadingReducer.isLoading
+    isModalWindow: state.ModalReducer.isModalWindow
 	}
   }
   export default connect(mapStateToProps,null)(App);

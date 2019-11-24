@@ -17,16 +17,16 @@ export const SignInAction = () => ({
     }
   });
 
-  export const LoadingInAction = () => ({
-    type: actionType.LOADER_IN,
+  export const ModalinAction = () => ({
+    type: actionType.MODAL_IN,
     payload: {
-      isLoading:true
+      isModalWindow:true
     },
   });
 
-  export const LoadingOutAction = () => ({
-    type: actionType.LOADER_OUT,
+  export const ModalOutAction = () => ({
+    type: actionType.MODAL_OUT,
     payload: {
-      isLoading:false
+      isModalWindow:false
     },
   });

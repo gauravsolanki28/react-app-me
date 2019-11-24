@@ -1,0 +1,23 @@
+
+.imageListing{
+    flex: 1 0 34%;
+    position: relative;
+    margin-bottom: 25px;
+}
+.imageListing:nth-child(even){
+    margin-left: 25px;
+}
+.imageParent{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 2;
+    width:100%;
+}
+.placeholderImage{
+    filter: blur(10px);
+    z-index: 1;
+}
+.realImage{
+    z-index: 2;
+}

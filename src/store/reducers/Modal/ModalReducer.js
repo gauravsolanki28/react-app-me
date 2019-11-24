@@ -1,14 +1,14 @@
 import * as actionType from '../../actions/ActionType';
 
 const initialState = {
-  isLoading:false
+  isModalWindow:false
 }
-const LoadingReducer = (state = initialState, action) => {
+const ModalReducer = (state = initialState, action) => {
   const newState = {...state}
   switch (action.type) {
-    case actionType.LOADER_IN:
+    case actionType.MODAL_IN:
       return action.payload
-    case actionType.LOADER_OUT:
+    case actionType.MODAL_OUT:
       return action.payload
     default:
       return newState
@@ -16,4 +16,4 @@ const LoadingReducer = (state = initialState, action) => {
 }
 
 
-export default LoadingReducer;
+export default ModalReducer;

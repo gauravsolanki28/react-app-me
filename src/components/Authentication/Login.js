@@ -3,7 +3,7 @@ import './Login.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import { SignInAction,LoadingInAction,LoadingOutAction } from '../../store/actions/index';
+import { SignInAction } from '../../store/actions/index';
 import axios from 'axios'
 
 class Login extends React.Component {
@@ -21,7 +21,6 @@ class Login extends React.Component {
 
 	signIn = (e) => {
 		e.preventDefault();
-		this.props.LoadingInAction(this.props.isLoading)
 		const token = "token"
 		const API_KEY = "http://localhost:3001/users"
 		const { email, password } = this.state;
@@ -37,7 +36,6 @@ class Login extends React.Component {
 			.then(res => {
 				window.localStorage.setItem("token", token);
 				this.props.SignInAction(this.props.isAuthed);
-				this.props.LoadingOutAction(this.props.isLoading)
 			})
 	}
 
@@ -106,8 +104,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		SignInAction: bindActionCreators(SignInAction, dispatch),
-		LoadingInAction: bindActionCreators(LoadingInAction, dispatch),
-		LoadingOutAction: bindActionCreators(LoadingOutAction, dispatch),
 	}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -2,12 +2,12 @@
 
 import { combineReducers } from 'redux';
 import AuthReducer from './Authentication/AuthReducer';
-import LoadingReducer from './Loader/LoadReducer';
+import ModalReducer from './Modal/ModalReducer';
 
 
 const rootreducer = combineReducers({
   AuthReducer,
-  LoadingReducer
+  ModalReducer
 })
 
 export default rootreducer

@@ -29,6 +29,7 @@ class Calculator extends React.Component {
     render() {
         return (
             <div className="calculator-container">
+                <p>In Progress .....</p>
                 <div className="calc-body">
                     <div className="calc-screen">
                         <div className="calc-operation">{this.state.result}</div>
@@ -59,10 +60,10 @@ class Calculator extends React.Component {
                         <div className="button l" onClick={this.onClickNumber}>+</div>
                     </div>
                     <div className="calc-button-row">
-                        <div className="button" onClick={this.onClickNumber}>.</div>
+                        <div className="button" onClick={this.onClickNumber}>+/-</div>
                         <div className="button" onClick={this.onClickNumber}>0</div>
-                        <div className="button" onClick={this.onClickNumber}></div>
-                        <div className="button l" onClick={this.result}>=</div>
+                        <div className="button" onClick={this.onClickNumber}>.</div>
+                        <button className="button l no-animation" style={{opacity:"0.5"}} disabled onClick={this.result}>=</button>
                     </div>
                 </div>
             </div>
