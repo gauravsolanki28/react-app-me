@@ -7,21 +7,29 @@ class ImageLoadEffect extends React.Component {
     Images:[
         { placeholderimageUrl:require('../../assets/images/desktop-small.jpg'),
           imageUrl : require('../../assets/images/desktop.jpg'),
+          width:"1500",
+          height:"1000",
           isLoaded:false
         },
         {
-          placeholderimageUrl : require('../../assets/images/KBAus-low.jpg'),
-          imageUrl: 'https://nhs-dynamic.secure.footprint.net/Images/Homes/KBAus746/28125621-191001.jpg?format=jpg',
+          placeholderimageUrl : require('../../assets/images/bdx-small.jpg'),
+          imageUrl: require('../../assets/images/bdx.jpg'),
+          width:"1200",
+          height:"800",
           isLoaded:false
         },
         {
           placeholderimageUrl : require('../../assets/images/pexels-photo-small.jpeg'),
-          imageUrl : "https://images.pexels.com/photos/2765872/pexels-photo-2765872.jpeg?auto=compress&cs=tinysrgb&dpr=3",
+          imageUrl : require("../../assets/images/pexels-photo.jpeg"),
+          width:"8192",
+          height:"5464",
           isLoaded:false
         },
         {
-          placeholderimageUrl : require('../../assets/images/pexel-photo-small-2.jpeg'),
-          imageUrl : "https://images.pexels.com/photos/3133685/pexels-photo-3133685.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+          placeholderimageUrl : require('../../assets/images/pexels-photo-2-small.jpeg'),
+          imageUrl : require("../../assets/images/pexels-photo-2.jpeg"),
+          width:"8192",
+          height:"5461",
           isLoaded:false
         }
     ]
@@ -44,6 +52,8 @@ class ImageLoadEffect extends React.Component {
                   index={i}
                   imageUrl={image.imageUrl}
                   placeholderimageUrl={image.placeholderimageUrl}
+                  width={image.width}
+                  height={image.height}
                   isLoaded={image.isLoaded}
                   loadedfunc={this.loadedfunc}/>)
             })
